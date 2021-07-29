@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import authService from '../../services/authService';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom'
-import { Flex, common_shadow, pop_reg, pop_thick } from '../../components/TuxComponents/utilities';
-import { SmallInput, PrimaryButton } from '../../components/TuxComponents/elements';
+import { Flex } from '../../components/TuxComponents/utilities';
 import { LoginModal } from '../../components/TuxComponents/elements/Login/Login'
 // styled components for this Login comoponent are at the bottom
 
@@ -38,52 +36,8 @@ class Login extends Component {
         return (
           <Main>
             <OutsideFlex>
-              {/* <TuxFlower src='/images/tuxFlower.png'></TuxFlower> */}
-              {/* <LoginBox> */}
                 <LoginModal />
-                {/* <GoogleBox
-                  // this is the "href" go to google
-                  // href='http://localhost:3001/api/auth/google'
-                //   href="https://thecoop-tux.herokuapp.com/api/auth/google"
-                href="http://taketux.com/api/auth/google"
-                >
-                  <GoogleG src='/images/google_logo.png' />
-                  <SignIn>Sign in with Google</SignIn>
-                </GoogleBox> */}
-                {/* <form autoComplete='off' onSubmit={this.handleSubmit}>
-                  <Text>or:</Text>
-                  <Label>Username or Email</Label>
-                  <SmallInput
-                    type='text'
-                    autoComplete='off'
-                    id='email'
-                    value={email}
-                    name='email'
-                    onChange={this.handleChange}
-                  ></SmallInput>
-                  <br />
-                  <br />
-                  <Label>Password</Label>
-                  <SmallInput
-                    type='password'
-                    autoComplete='off'
-                    id='password'
-                    value={pw}
-                    name='pw'
-                    onChange={this.handleChange}
-                  ></SmallInput>
-                  <PrimaryButton
-                    disabled={email.length > 0 && pw.length > 0 ? false : true}
-                  >
-                    Log In
-                  </PrimaryButton>
-                </form> */}
-              {/* </LoginBox> */}
             </OutsideFlex>
-            {/* // <OutsideFlex signUp>
-            //   <Text>Need an Account?&nbsp;</Text>
-            //   <LinkTo to='/signup'>Sign Up</LinkTo>
-            // </OutsideFlex> */}
           </Main>
         );
     }
@@ -108,61 +62,3 @@ const OutsideFlex = styled.article`
     `}
 `;
 
-const TuxFlower = styled.img`
-	width: 140px;
-	z-index: 10;
-    position: absolute;
-    top: 100px;
-	border-radius: 50%;
-`;
-
-const LoginBox = styled.div`
-    ${Flex({fd:'column', ai:'center'})};
-    width: 425px;
-    height: 510px;
-    background-color: var(--true-white);
-    box-shadow: ${common_shadow};
-    border-radius: 10px;
-    margin-top: 200px;
-    padding: 50px 0 0;
-    // check figma file to refine this
-`;
-
-const GoogleG = styled.img`
-    width: 35px;
-    height: 35px;
-    margin: 20px;
-`;
-
-const GoogleBox = styled.a`
-    width: 343px;
-    height: 80px;
-    border-radius: 5px;
-    background: linear-gradient(360deg, #F9F9F9 0%, rgba(255, 255, 255, 0) 100%);
-    ${Flex({jc:'center',ai:'center'})};
-    margin-bottom: 10px;
-    box-shadow: ${common_shadow};
-    text-decoration: none;
-    /* margin-top: 60px; */
-`;
-
-const SignIn = styled.p`
-    font: 700 20px 'Roboto', sans-serif;
-    /* line-height: 23.44px; */
-    color: rgba(0,0,0,.54);
-    margin-top: 15px;
-`;
-
-const Text = styled.p`
-    font: ${pop_reg};
-    margin: 0;
-`;
-
-const Label = styled.label`
-    font: ${pop_thick};
-
-`;
-
-const LinkTo = styled(Link)`
-  color: var(--link-text);
-`;
